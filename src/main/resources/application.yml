@@ -1,0 +1,46 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+
+swagger2:
+  base-package: com.boot.controller
+  title: SpringBoot集成Temporal
+  contact-name: SpringBoot集成Temporal
+  version: 1.0.0
+  description: SpringBoot集成Temporal
+  disabled: true
+  redirect-uri: /
+
+server:
+  port: 8080
+
+
+configuration:
+  temporal:
+    heartbeatInterval: 10
+    ## Workflow开关
+    enabledWorkflow: true
+    ## 同时启动Workflow数量
+    initWorkflowSize: 1
+    ## temporal 连接url
+    target: 127.0.0.1:6934
+    ## 最大并发工作流任务执行大小（默认200）
+    maxConcurrentWorkflowTaskExecutionSize: 20
+    ## 最大并发活动执行大小（默认200）
+    maxConcurrentActivityExecutionSize: 20
+    retry:
+      ## 初始间隔
+      initialInterval: 1s
+      ## 最大间隔
+      maximumInterval: 60s
+      ## 退避系数
+      backoffCoefficient: 2
+      ## 最大尝试次数
+      ##maximumAttempts: 99999999
+    activity:
+      ## 单次活动执行的超时时间
+      startToCloseTimeout: 3d
+      ## 心跳超时，Activity 执行时间长时，应该适当增大心跳，否则将触发重试
+      heartbeatTimeout: 30m

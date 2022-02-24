@@ -6,7 +6,6 @@ import lombok.Data;
 /**
  * 功能描述：
  *
- * @program: melt-voiceai-server
  * @author: 代号007
  * @create: 2021-12-10 17:46
  **/

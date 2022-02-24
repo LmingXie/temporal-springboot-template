@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 功能描述：
  *
- * @program: melt-voiceai-server
  * @author: 代号007
  * @create: 2021-12-28 09:39
  **/
